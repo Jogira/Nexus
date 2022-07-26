@@ -1,6 +1,6 @@
 import './style.css'
 
-import * as THREE from '/node_modules/three/src/Three.js';
+import * as THREE from './node_modules/three/src/Three.js';
 
 import {OrbitControls} from "https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/controls/OrbitControls.js"
 
