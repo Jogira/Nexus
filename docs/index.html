@@ -347,13 +347,15 @@
     moon.position.z = 10;
     moon.position.setX(-3);
 
+    zwei.position.y = 20;
+
     function animate() {
       requestAnimationFrame(animate);
       torus.rotation.x = + 0.01;
       torus.rotation.y += 0.005;
       torus.rotation.z += 0.01;
 
-      moon.position.y += 0.001;
+      moon.position.y += 0.01;
 
       controls.update();
       renderer.render(scene, camera);
@@ -367,8 +369,8 @@
       moon.rotation.z += 0.05;
 
 
-      zwei.rotation.y += 0.05;
-      zwei.rotation.z += 0.05;
+      zwei.rotation.y += 4.05;
+      zwei.rotation.z += 4.05;
 
       camera.position.z = t * -0.001;
       camera.position.x = t * -0.081;
