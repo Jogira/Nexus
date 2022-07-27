@@ -10,199 +10,264 @@
 </head>
 
 <style>
+  @import url("https://use.typekit.net/jmk3xov.css");
+
+
+
   canvas {
     position: fixed;
     top: 0;
     left: 0;
   }
 
+
+  :root {
+    --dark-bg: rgba(15, 15, 15, 0.95);
+    --spacing: 350px;
+
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
   main {
+    width: 100vw;
+    color: white;
+    z-index: 99;
     position: absolute;
+    width: 100%;
+    margin: 0px auto;
+    padding: 120px 0px;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  h1,
+  h2,
+  h3,
+  blockquote {
+    font-family: elevon, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+
+
+  header {
+    background: rgba(0, 0, 0, 0);
+    grid-column: 2 / span 5;
+    font-size: 2.5rem;
+    padding: 2rem;
+    margin-bottom: var(--spacing);
+  }
+
+  section {
+    grid-column: 2 / 8;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0);
+    font-size: 1.25rem;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    line-height: 1.5;
+    margin-bottom: var(--spacing);
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 0;
+    grid-column: 2 / span 9;
+    margin-bottom: var(--spacing);
+  }
+
+  blockquote p {
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-size: 4rem;
+    display: inline;
+    line-height: 1;
+  }
+
+  .left {
+    grid-column: 6 / 12;
+  }
+
+  #play_water {
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: Georgia, serif;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
   }
 </style>
+<script>
+  var playing = 0;
+  var audio = new Audio('water.mp3');
+  function play() {
+    audio.loop = true;
+
+    if (playing == 0) {
+      audio.play();
+      playing = 1;
+    }
+
+    else {
+      playing = 0;
+      audio.pause();
+    }
+
+
+  }
+</script>
 
 <body>
 
   <canvas id="bg" onscroll="console.log('SCROLLING')"></canvas>
   <main>
+    <button id="play_water" onclick="play()"><img src="obake.png"><br>Click me, before I'm gone forever.</button>
+    <header>
+      <h1>I'm sleepy.</h1>
+    </header>
 
-    <body>
-      <p>👻</p>
-    </body>
 
-    <body>
-      <p>This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.This is related to npm not being able to find a file.</p>
-    </body>
+    <blockquote>
+      <p>I'd honestly really like to go to bed.</p>
+    </blockquote>
 
-    <body>
-      <p>👻</p>
-    </body>
+    <section>
+      <h2>👻 Filler Text, Ya Feel?</h2>
+      <p>
+        隠しても隠しても隠しても見えてる
+        はみでてるわかってるあなたは狂ってる
+        それでもそれでもそれでもやっぱり
+        まっすぐ佇むあなたはきれいさ
+      </p>
 
-    <body>
-      <p>👻</p>
-    </body>
+      <p>
+        ぼくはいつかあなたを失うだろう
+        あなたはいつかどこかへ消えるだろう
+        それでもそれでもそれでも大丈夫さ
+        なにもなかったように笑えるさ
+      </p>
 
-    <body>
-      <p>👻</p>
-    </body>
+      <p>
+        かわりのなにかで埋め合わせてきっと9
+        それなりに楽しくやっていくさ
+        それでもやっぱり忘れたくないや
+        あなたの声やくだらない話
+      </p>
 
-    <body>
-      <p>👻</p>
-    </body>
+      <p>
+        狂った頭でいろいろ考えて
+        不安を抱えて老いぼれてゆくんだろう
+        それでもそれでもそれでもやっぱり
+        まっすぐ佇むあなたはきれいだろう
 
-    <body>
-      <p>👻</p>
-    </body>
+        きっときっとそうさきっと
+      </p>
 
-    <body>
-      <p>👻</p>
-    </body>
+    </section>
 
-    <body>
-      <p>👻</p>
-    </body>
+    <section class="light">
+      <h2> 🐶 I love the doggies.</h2>
 
-    <body>
-      <p>👻</p>
-    </body>
+      <pre style="color:rgb(29, 245, 0)">
 
-    <body>
-      <p>👻</p>
-    </body>
+    ▄              ▄    
+    ▌▒█           ▄▀▒▌   
+    ▌▒▒█        ▄▀▒▒▒▐   
+   ▐▄█▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐   
+ ▄▄▀▒▒▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐   
+▄▀▒▒▒░░░▒▒▒░░░▒▒▒▀██▀▒▌   
+▐▒▒▒▄▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀▄▒▌  
+▌░░▌█▀▒▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐  
+▐░░░▒▒▒▒▒▒▒▒▌██▀▒▒░░░▒▒▒▀▄▌ 
+▌░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▌ 
+▌▒▒▒▄██▄▒▒▒▒▒▒▒▒░░░░░░░░▒▒▒▐ 
+▐▒▒▐▄█▄█▌▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▒▒▒▌  Wow, such page.
+▐▒▒▐▀▐▀▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▒▐ 
+▌▒▒▀▄▄▄▄▄▄▒▒▒▒▒▒▒▒░▒░▒░▒▒▒▌ 
+▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒▒▄▒▒▐  
+▀▄▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒▄▒▒▒▒▌  
+▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀   
+  ▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀     
+     ▀▀▀▀▀▀▀▀▀▀▀▀           
+   </pre>
 
-    <body>
-      <p>👻</p>
-    </body>
 
-    <body>
-      <p>👻</p>
-    </body>
 
-    <body>
-      <p>👻</p>
-    </body>
 
-    <body>
-      <p>👻</p>
-    </body>
+      <h2>🏆 Gamer</h2>
 
-    <body>
-      <p>👻</p>
-    </body>
+      <p>
+        ┈┈┈┈╱▏┈┈┈┈┈╱▔▔▔▔╲┈┈┈┈┈
+        ┈┈┈┈▏▏┈┈┈┈┈▏╲▕▋▕▋▏┈┈┈┈
+        ┈┈┈┈╲╲┈┈┈┈┈▏┈▏┈▔▔▔▆┈┈┈
+        ┈┈┈┈┈╲▔▔▔▔▔╲╱┈╰┳┳┳╯┈┈┈
+        ┈┈╱╲╱╲▏┈┈┈┈┈┈▕▔╰━╯┈┈┈┈
+        ┈┈▔╲╲╱╱▔╱▔▔╲╲╲╲┈┈┈┈┈┈┈
+        ┈┈┈┈╲╱╲╱┈┈┈┈╲╲▂╲▂┈┈┈┈┈
+        ┈┈┈┈┈┈┈┈┈┈┈┈┈╲╱╲╱┈┈┈┈┈
+      </p>
 
-    <body>
-      <p>👻</p>
-    </body>
+    </section>
 
-    <body>
-      <p>👻</p>
-    </body>
+    <blockquote>
+      <p>You reap what you sow.<br>-Me. I said that once.</p>
+    </blockquote>
 
-    <body>
-      <p>👻</p>
-    </body>
+    <section class="left">
+      <h2>Work History</h2>
 
-    <body>
-      <p>👻</p>
-    </body>
+      <h3>Random Latin Garbage</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+      </p>
+      <h3>More Random Latin Garbage</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+      </p>
+      <h3>The Last of Random Latin Garbage</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+      </p>
 
-    <body>
-      <p>👻</p>
-    </body>
+    </section>
 
-    <body>
-      <p>👻</p>
-    </body>
+    <blockquote>
+      <p>Please hire me, I am sane.!</p>
+    </blockquote>
 
-    <body>
-      <p>👻</p>
-    </body>
 
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
-
-    <body>
-      <p>👻</p>
-    </body>
   </main>
   <script type="module">
+
+
+
+
+
 
     import * as THREE from 'https://unpkg.com/three@0.142.0/build/three.module.js';
 
@@ -221,10 +286,12 @@
     camera.position.setZ(30);
 
 
-
-    const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+    const goob_texture = new THREE.TextureLoader().load('goob.png');
+    const geometry = new THREE.OctahedronGeometry(10, 0);
     const material = new THREE.MeshStandardMaterial({ color: 0xFF6347 });
-    const torus = new THREE.Mesh(geometry, material);
+    const torus = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ map: goob_texture }));
+
+
 
     scene.add(torus)
 
@@ -235,7 +302,7 @@
     scene.add(pointLight, ambientLight);
 
     const ligthHelper = new THREE.PointLightHelper(pointLight);
-    const gridHelper = new THREE.GridHelper(200, 50);
+    const gridHelper = new THREE.GridHelper(200, 50, 0x444444, 0xeff00);
 
     const controls = new OrbitControls(camera, renderer.domElement);
 
@@ -252,7 +319,7 @@
     }
     Array(200).fill().forEach(addStar)
 
-    const spaceTexture = new THREE.TextureLoader().load('irongiant.png')
+    const spaceTexture = new THREE.TextureLoader().load('madotsuki.jpg')
     scene.background = spaceTexture
 
     scene.add(ligthHelper, gridHelper);
