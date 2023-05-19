@@ -1,4 +1,4 @@
 # Nexus
-Making a personal website just to have the excuse to experiment with Three JS. 
+Making a personal website just to have the excuse to experiment with Three JS and use as a portfolio.
 
-https://jogira.github.io/Nexus/
+
