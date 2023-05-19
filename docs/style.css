@@ -1,13 +1,10 @@
 @import url("https://use.typekit.net/jmk3xov.css");
 
-
-
 canvas {
   position: fixed;
   top: 0;
   left: 0;
 }
-
 
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
@@ -17,7 +14,6 @@ canvas {
   font-weight: 400;
   font-style: normal;
 }
-
 
 main {
   width: 100vw;
@@ -46,8 +42,6 @@ canvas {
   top: 0;
   left: 0;
 }
-
-
 
 header {
   background: rgba(0, 0, 0, 0);
@@ -95,5 +89,4 @@ blockquote p {
   font-family: Georgia, serif;
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-
 }
