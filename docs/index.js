@@ -23,8 +23,6 @@ const torus = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ map: goob_t
 
 
 
-
-
 scene.add(torus)
 
 const pointLight = new THREE.PointLight(0xffffff);

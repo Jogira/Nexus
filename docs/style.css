@@ -6,6 +6,12 @@ canvas {
   left: 0;
 }
 
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
   --spacing: 350px;
@@ -90,3 +96,34 @@ blockquote p {
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
+
+
+/* .outer-wrapper {
+  border: 2px solid black;
+  width: 100vh;
+  height: 100vw;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+}
+
+.wrapper {
+  width: 400vw;
+  display: flex;
+  flex-direction: row;
+  transform: rotate(90deg) translateX(-100vh);
+  transform-origin: bottom left;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+}
+
+
+
+::-webkit-scrollbar {
+  display: none;
+} */
