@@ -94,6 +94,8 @@ function animate() {
 
 function moveCamera() {
     const t = document.body.getBoundingClientRect().top;
+    console.log(document.body.getBoundingClientRect());
+    console.log("MOVING");
     moon.rotation.x += 0.05;
     moon.rotation.y += 0.075;
     moon.rotation.z += 0.05;
@@ -107,6 +109,9 @@ function moveCamera() {
     camera.position.y = t * -0.081;
 }
 
-window.onscroll = moveCamera;
+
+(window).scroll(function () {
+    moveCamera();
+});
 
 animate();
