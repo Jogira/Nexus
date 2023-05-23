@@ -2,7 +2,43 @@ import * as THREE from 'https://unpkg.com/three@0.142.0/build/three.module.js';
 
 import { OrbitControls } from "https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/controls/OrbitControls.js"
 
+import * as dat from 'dat.gui';
+
+const textureLoader = new THREE.TextureLoader();
+
+const planeGeometry = new THREE.PlaneBufferGeometry(1, 1.3);
+
+const gui = new dat.GUI();
+
 const scene = new THREE.Scene();
+
+for (let i = 1; i <= 7; i++) {
+    const material = new THREE.MeshBasicMaterial({
+        map: textureLoader.load(`media/pictures/${i}.png`)
+    });
+
+    const img = new THREE.Mesh(planeGeometry, material);
+    img.position.set(i * 1.8, 1, 1);
+
+    scene.add(img);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
