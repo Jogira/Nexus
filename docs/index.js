@@ -4,150 +4,114 @@ import { OrbitControls } from "https://threejsfundamentals.org/threejs/resources
 
 import * as dat from 'https://cdn.jsdelivr.net/npm/dat.gui@0.7.9/build/dat.gui.module.js';
 
+
+//Texture Loader
 const textureLoader = new THREE.TextureLoader();
 
-const planeGeometry = new THREE.PlaneBufferGeometry(1, 1.3);
+// Debug
+const gui = new dat.GUI()
 
-const gui = new dat.GUI();
+// Canvas
+const canvas = document.querySelector('canvas.webgl')
 
-const scene = new THREE.Scene();
+// Scene
+const scene = new THREE.Scene()
+
+// Objects
+const geometry = new THREE.PlaneBufferGeometry(1, 1.3);
+
+// Materials
 
 for (let i = 1; i <= 7; i++) {
     const material = new THREE.MeshBasicMaterial({
         map: textureLoader.load(`media/pictures/${i}.png`)
     });
 
-    const img = new THREE.Mesh(planeGeometry, material);
-    img.position.set(i * 1.8, 1, 1);
+    const img = new THREE.Mesh(geometry, material);
+    img.position.set(i * -1.2, 0, 1);
 
     scene.add(img);
 }
 
 
+// Mesh
 
 
+// Lights
 
+const pointLight = new THREE.PointLight(0xffffff, 0.1)
+pointLight.position.x = 2
+pointLight.position.y = 3
+pointLight.position.z = 4
+scene.add(pointLight)
 
+/**
+ * Sizes
+ */
+const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
+}
 
+window.addEventListener('resize', () => {
+    // Update sizes
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
 
+    // Update camera
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
 
+    // Update renderer
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+})
 
+/**
+ * Camera
+ */
+// Base camera
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+camera.position.x = 0
+camera.position.y = 0
+camera.position.z = 2
+scene.add(camera)
 
+gui.add(camera.position, 'x').min(-10).max(5);
 
+// Controls
+// const controls = new OrbitControls(camera, canvas)
+// controls.enableDamping = true
 
-
-
-
-
-
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
+/**
+ * Renderer
+ */
 const renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('#bg'),
-});
+    canvas: canvas
+})
+renderer.setSize(sizes.width, sizes.height)
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(30);
+/**
+ * Animate
+ */
 
+const clock = new THREE.Clock()
 
-const goob_texture = new THREE.TextureLoader().load('media/images/goob.png');
-const geometry = new THREE.OctahedronGeometry(10, 0);
-const material = new THREE.MeshStandardMaterial({ color: 0xFF6347 });
-const torus = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ map: goob_texture }));
+const tick = () => {
 
+    const elapsedTime = clock.getElapsedTime()
 
+    // Update objects
 
+    // Update Orbital Controls
+    // controls.update()
 
-scene.add(torus)
+    // Render
+    renderer.render(scene, camera)
 
-const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(5, 5, 5);
-const ambientLight = new THREE.AmbientLight(0xffffff);
-
-scene.add(pointLight, ambientLight);
-
-const ligthHelper = new THREE.PointLightHelper(pointLight);
-const gridHelper = new THREE.GridHelper(200, 50, 0x444444, 0xeff00);
-
-const controls = new OrbitControls(camera, renderer.domElement);
-
-
-function addStar() {
-    const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-    const material = new THREE.MeshStandardMaterial({ color: 0xffffff })
-    const star = new THREE.Mesh(geometry, material);
-
-    const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
-
-    star.position.set(x, y, z);
-    scene.add(star)
-}
-Array(200).fill().forEach(addStar)
-
-const spaceTexture = new THREE.TextureLoader().load('media/images/madotsuki.png')
-scene.background = spaceTexture
-
-scene.add(ligthHelper, gridHelper);
-
-
-const zweiTexture = new THREE.TextureLoader().load('media/images/chimkin.png');
-
-const zwei = new THREE.Mesh(
-    new THREE.BoxGeometry(3, 3, 3),
-    new THREE.MeshBasicMaterial({ map: zweiTexture })
-)
-
-scene.add(zwei);
-
-const moonTexture = new THREE.TextureLoader().load('media/images/moon.png');
-const normal = new THREE.TextureLoader().load('media/images/normal.png');
-
-const moon = new THREE.Mesh(
-    new THREE.SphereGeometry(3, 32, 32),
-    new THREE.MeshStandardMaterial({ map: moonTexture, normalMap: normal })
-)
-
-scene.add(moon)
-
-moon.position.z = 10;
-moon.position.setX(-3);
-
-zwei.position.y = 20;
-
-function animate() {
-    requestAnimationFrame(animate);
-    torus.rotation.x = + 0.01;
-    torus.rotation.y += 0.005;
-    torus.rotation.z += 0.01;
-
-    moon.position.y += 0.01;
-
-    controls.update();
-    renderer.render(scene, camera);
+    // Call tick again on the next frame
+    window.requestAnimationFrame(tick)
 }
 
-
-function moveCamera() {
-    const t = document.body.getBoundingClientRect().top;
-    console.log(document.body.getBoundingClientRect());
-    console.log("MOVING");
-    moon.rotation.x += 0.05;
-    moon.rotation.y += 0.075;
-    moon.rotation.z += 0.05;
-
-
-    zwei.rotation.y += 4.05;
-    zwei.rotation.z += 4.05;
-
-    camera.position.z = t * -0.001;
-    camera.position.x = t * -0.081;
-    camera.position.y = t * -0.081;
-}
-
-
-(window).scroll(function () {
-    moveCamera();
-});
-
-animate();
+tick()

@@ -1,37 +1,14 @@
 @import url("https://use.typekit.net/jmk3xov.css");
 
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --dark-bg: rgba(15, 15, 15, 0.95);
-  --spacing: 350px;
-
-  font-family: brandon-grotesque, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
 
 main {
   width: 100vw;
   color: white;
-  z-index: 99;
   position: absolute;
   width: 100%;
   margin: 0px auto;
   padding: 120px 0px;
 
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
 }
 
 h1,
@@ -96,4 +73,3 @@ blockquote p {
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
-
