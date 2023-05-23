@@ -2,7 +2,7 @@ import * as THREE from 'https://unpkg.com/three@0.142.0/build/three.module.js';
 
 import { OrbitControls } from "https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/controls/OrbitControls.js"
 
-import * as dat from './docs/node_modules/dat.gui';
+import * as dat from 'https://cdn.jsdelivr.net/npm/dat.gui@0.7.9/build/dat.gui.module.js';
 
 const textureLoader = new THREE.TextureLoader();
 
