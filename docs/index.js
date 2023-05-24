@@ -28,7 +28,7 @@ for (let i = 1; i <= 7; i++) {
     });
 
     const img = new THREE.Mesh(geometry, material);
-    img.position.set(i * -1.2, 0, 1);
+    img.position.set(i * -1.2, Math.random(), 1);
 
     scene.add(img);
 }
@@ -67,6 +67,16 @@ window.addEventListener('resize', () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
 
+//Mouse
+window.addEventListener("wheel", onMouseWheel)
+
+let x = 0;
+let position = 0
+function onMouseWheel(event) {
+    x = event.deltaX;
+    console.log(event.deltaX)
+}
+
 /**
  * Camera
  */
@@ -74,7 +84,7 @@ window.addEventListener('resize', () => {
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.x = 0
 camera.position.y = 0
-camera.position.z = 2
+camera.position.z = 3
 scene.add(camera)
 
 gui.add(camera.position, 'x').min(-10).max(5);
