@@ -73,7 +73,7 @@ window.addEventListener("wheel", onMouseWheel)
 let x = 0;
 let position = 0
 function onMouseWheel(event) {
-    x = event.deltaX;
+    x = (event.deltaY) * 0.0009;
     console.log(event.deltaX)
 }
 
@@ -111,6 +111,10 @@ const clock = new THREE.Clock()
 const tick = () => {
 
     const elapsedTime = clock.getElapsedTime()
+
+    position += x;
+    x *= .9
+    camera.position.x = position;
 
     // Update objects
 
