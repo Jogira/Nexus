@@ -34,6 +34,15 @@ for (let i = 1; i <= 7; i++) {
 }
 
 
+let objs = [];
+
+scene.traverse((object) => {
+    if (object.isMesh) {
+        objs.push(object);
+        console.log(object);
+    }
+});
+
 // Mesh
 
 
@@ -74,8 +83,15 @@ let x = 0;
 let position = 0
 function onMouseWheel(event) {
     x = (event.deltaY) * 0.0009;
-    console.log(event.deltaX)
 }
+
+
+const mouse = new THREE.Vector2()
+
+window.addEventListener('mousemove', (event) => {
+    mouse.x = event.clientX / sizes.width * 2 - 1;
+    mouse.y = - (event.clientY / sizes.height) * 2 + 1;
+})
 
 /**
  * Camera
@@ -106,6 +122,8 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  * Animate
  */
 
+const raycaster = new THREE.Raycaster()
+
 const clock = new THREE.Clock()
 
 const tick = () => {
@@ -114,6 +132,22 @@ const tick = () => {
 
     position += x;
     x *= .9
+
+
+    // Raycaster 
+    raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObjects(objs);
+
+    for (const intersect of intersects) {
+        intersect.object.scale.set(1.1, 1.1);
+    }
+
+    for (const object of objs) {
+        if (!intersects.find(intersect => intersect.object === object)) {
+            object.scale.set(1, 1);
+        }
+    }
+
     camera.position.x = position;
 
     // Update objects
