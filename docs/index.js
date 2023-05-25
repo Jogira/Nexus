@@ -4,12 +4,13 @@ import { OrbitControls } from "https://threejsfundamentals.org/threejs/resources
 
 import * as dat from 'https://cdn.jsdelivr.net/npm/dat.gui@0.7.9/build/dat.gui.module.js';
 
+// import gsap from 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js';
+
 
 //Texture Loader
 const textureLoader = new THREE.TextureLoader();
 
 // Debug
-const gui = new dat.GUI()
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -20,6 +21,9 @@ const scene = new THREE.Scene()
 // Objects
 const geometry = new THREE.PlaneBufferGeometry(1, 1.3);
 
+const rightBound = 6;
+const leftBound = -0.1;
+
 // Materials
 
 for (let i = 1; i <= 7; i++) {
@@ -28,7 +32,7 @@ for (let i = 1; i <= 7; i++) {
     });
 
     const img = new THREE.Mesh(geometry, material);
-    img.position.set(i * -1.2, Math.random(), 1);
+    img.position.set(i * 1.2, Math.random(), 0);
 
     scene.add(img);
 }
@@ -79,7 +83,7 @@ window.addEventListener('resize', () => {
 //Mouse
 window.addEventListener("wheel", onMouseWheel)
 
-let x = 0;
+let x = 0.2;
 let position = 0
 function onMouseWheel(event) {
     x = (event.deltaY) * 0.0009;
@@ -99,11 +103,10 @@ window.addEventListener('mousemove', (event) => {
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.x = 0
-camera.position.y = 0
-camera.position.z = 3
+camera.position.y = 0.5
+camera.position.z = 2.5
 scene.add(camera)
 
-gui.add(camera.position, 'x').min(-10).max(5);
 
 // Controls
 // const controls = new OrbitControls(camera, canvas)
@@ -129,9 +132,8 @@ const clock = new THREE.Clock()
 const tick = () => {
 
     const elapsedTime = clock.getElapsedTime()
+    console.log(camera.position)
 
-    position += x;
-    x *= .9
 
 
     // Raycaster 
@@ -139,16 +141,33 @@ const tick = () => {
     const intersects = raycaster.intersectObjects(objs);
 
     for (const intersect of intersects) {
-        intersect.object.scale.set(1.1, 1.1);
+        gsap.to(intersect.object.scale, { x: 1.3, y: 1.3 })
+        gsap.to(intersect.object.rotation, { y: 0 })
+        gsap.to(intersect.object.position, { z: 0.4 })
     }
 
     for (const object of objs) {
         if (!intersects.find(intersect => intersect.object === object)) {
-            object.scale.set(1, 1);
+            gsap.to(object.scale, { x: 1, y: 1 })
+            gsap.to(object.rotation, { y: -0.2 })
+            gsap.to(object.position, { z: 0 })
         }
     }
 
+
+    position += x;
+    x *= .9;
+
+    if (position > rightBound) {
+        position = rightBound;
+    }
+
+    else if (position < leftBound) {
+        position = leftBound;
+    }
+
     camera.position.x = position;
+
 
     // Update objects
 
