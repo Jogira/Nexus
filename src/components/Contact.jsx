@@ -8,10 +8,41 @@ import { EarthCanvas } from './canvas';
 import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Contact = () => {
 
+
+  const success = () => {
+    toast.success('Email sent!', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
+  const failure = () => {
+    toast.error('Looks like there was an error.', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: false,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
   const formRef = useRef();
+
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -39,24 +70,28 @@ const Contact = () => {
       },
       'oLL9t_diSSDf7Fbd4'
     )
-      .then(() => {
-        setLoading(false);
-        alert('Thank you. I will get back to you shortly.');
-        setForm({
-          name: '',
-          email: '',
-          message: ''
-        }, (error) => {
+      .then(
+        () => {
           setLoading(false);
-          console.log(error);
-          alert('Looks like there was an issue with sending the email. Please contact me directly at Jonathan.giraud4@gmail.com');
-        })
-      });
+          { success() }
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          { failure() }
+          setLoading(false);
+          console.error(error);
+        }
+      );
   }
 
 
   return (
     <div className='xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>
+      <ToastContainer />
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
