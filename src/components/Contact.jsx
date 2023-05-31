@@ -19,8 +19,40 @@ const Contact = () => {
   });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => { }
-  const handleSubmit = (e) => { }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    emailjs.send(
+      'service_wqe2sge',
+      'template_5rxgoe7',
+      {
+        from_name: form.name,
+        to_name: 'Jonathan',
+        from_email: form.email,
+        to_email: 'Jonathan.giraud4@gmail.com',
+        message: form.message
+      },
+      'oLL9t_diSSDf7Fbd4'
+    )
+      .then(() => {
+        setLoading(false);
+        alert('Thank you. I will get back to you shortly.');
+        setForm({
+          name: '',
+          email: '',
+          message: ''
+        }, (error) => {
+          setLoading(false);
+          console.log(error);
+          alert('Looks like there was an issue with sending the email. Please contact me directly at Jonathan.giraud4@gmail.com');
+        })
+      });
+  }
 
 
   return (
