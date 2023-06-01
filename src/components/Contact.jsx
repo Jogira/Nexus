@@ -9,8 +9,8 @@ import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
 
 
-import { ToastContainer, toast } from 'react-toastify';
-import { Flip } from 'react-toastify';
+import { ToastContainer, toast, Flip } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 import { FaEnvelope } from 'react-icons/fa';
 import './Contact.css';
 
