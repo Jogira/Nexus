@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedin } from "react-icons/fa"; // Import the icons from react-icons
+import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa"; // Import the icons from react-icons
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -60,17 +60,23 @@ const Navbar = () => {
             </li>
           ))}
           <li className='text-secondary hover:text-[#4078c0] text-[25px] font-medium cursor-pointer'>
-            <a href='https://github.com/Jogira' target='_blank' rel='noopener noreferrer'>
+            <a href='https://github.com/Jogira' title="Github" target='_blank' rel='noopener noreferrer'>
               <FaGithub />
             </a>
           </li>
 
           <li className='text-secondary hover:text-[#0e76a8] text-[25px] font-medium cursor-pointer'>
-            <a href='https://www.linkedin.com/in/jonathangiraud/' target='_blank' rel='noopener noreferrer'>
+            <a href='https://www.linkedin.com/in/jonathangiraud/' title="Linkedin" target='_blank' rel='noopener noreferrer'>
               <FaLinkedin />
             </a>
           </li>
 
+          {/* Additional PDF button */}
+          <li className='text-secondary hover:text-[#34ffb9] hover:text-white text-[25px] font-medium cursor-pointer'>
+            <a href='./resume.pdf' title='Resume' target='_blank' rel='noopener noreferrer'>
+              <FaFilePdf />
+            </a>
+          </li>
         </ul>
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>
@@ -107,6 +113,13 @@ const Navbar = () => {
               <li className='text-secondary hover:text-white text-[16px] font-medium cursor-pointer'>
                 <a href='https://www.linkedin.com/in/jonathangiraud/' target='_blank' rel='noopener noreferrer'>
                   LinkedIn
+                </a>
+              </li>
+
+              {/* Additional PDF button */}
+              <li className='text-secondary hover:text-white text-[16px] font-medium cursor-pointer'>
+                <a href='./resume.pdf' title='Resume' target='_blank' rel='noopener noreferrer'>
+                  Resume
                 </a>
               </li>
             </ul>

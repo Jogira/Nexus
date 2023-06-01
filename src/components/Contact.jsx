@@ -11,7 +11,6 @@ import { slideIn } from '../utils/motion';
 
 import { ToastContainer, toast } from 'react-toastify';
 import { Flip } from 'react-toastify';
-import 'material-react-toastify/dist/ReactToastify.css';
 import { FaEnvelope } from 'react-icons/fa';
 import './Contact.css';
 
