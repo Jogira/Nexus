@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FaGithub, FaLinkedin } from "react-icons/fa"; // Import the icons from react-icons
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -58,6 +59,18 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+          <li className='text-secondary hover:text-[#4078c0] text-[25px] font-medium cursor-pointer'>
+            <a href='https://github.com/Jogira' target='_blank' rel='noopener noreferrer'>
+              <FaGithub />
+            </a>
+          </li>
+
+          <li className='text-secondary hover:text-[#0e76a8] text-[25px] font-medium cursor-pointer'>
+            <a href='https://www.linkedin.com/in/jonathangiraud/' target='_blank' rel='noopener noreferrer'>
+              <FaLinkedin />
+            </a>
+          </li>
+
         </ul>
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>
@@ -86,6 +99,16 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
+              <li className='text-secondary hover:text-white text-[16px] font-medium cursor-pointer'>
+                <a href='https://github.com/Jogira' target='_blank' rel='noopener noreferrer'>
+                  Github
+                </a>
+              </li>
+              <li className='text-secondary hover:text-white text-[16px] font-medium cursor-pointer'>
+                <a href='https://www.linkedin.com/in/jonathangiraud/' target='_blank' rel='noopener noreferrer'>
+                  LinkedIn
+                </a>
+              </li>
             </ul>
           </div>
         </div>
