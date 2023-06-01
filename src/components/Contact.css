@@ -1,0 +1,7 @@
+.email-text:hover {
+    text-shadow: 0 0 5px #00ff00, 0 0 5px #00ff00, 0 0 5px #00ff00;
+}
+
+.email-text {
+    transition: text-shadow 0.5s ease;
+}

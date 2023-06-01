@@ -42,8 +42,8 @@ const Navbar = () => {
         >
           <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
-            Jonathan &nbsp;
-            <span className='sm:block hidden'> | Nexus Portfolio</span>
+            Jonathan&nbsp;
+            <span className='sm:block hidden'><span style={{ color: '#00f090' }}>|</span> Nexus Portfolio</span>
           </p>
         </Link>
 
