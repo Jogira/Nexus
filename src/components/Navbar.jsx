@@ -42,21 +42,21 @@ const Navbar = () => {
           }}
         >
           <div className="relative">
-            {/* <span className='sm:block hidden'> */}
-            <img
-              src={pfp}
-              alt='pfp'
-              style={{
-                transform: scrolled ? 'scale(0.40)' : 'none',
-                transition: 'transform 0.3s ease, left 0.3s ease, top 0.3s ease',
-                left: scrolled ? '-8rem' : '-10rem',
-                top: scrolled ? '-4rem' : '-1rem',
-                width: scrolled ? 'none' : '10rem',
-                height: scrolled ? 'none' : '10rem',
-              }}
-              className='object-contain absolute'
-            />
-            {/* </span> */}
+            <span className='sm:block hidden'>
+              <img
+                src={pfp}
+                alt='pfp'
+                style={{
+                  transform: scrolled ? 'scale(0.40)' : 'none',
+                  transition: 'transform 0.3s ease, left 0.3s ease, top 0.3s ease',
+                  left: scrolled ? '-8rem' : '-10rem',
+                  top: scrolled ? '-4rem' : '-1rem',
+                  width: scrolled ? 'none' : '10rem',
+                  height: scrolled ? 'none' : '10rem',
+                }}
+                className='object-contain absolute'
+              />
+            </span>
             <p className='text-white text-[18px] font-bold cursor-pointer flex'>
               Jonathan&nbsp;
               <span style={{ color: '#00f090' }}>| </span> <span className='sm:block hidden'>&nbsp; Nexus </span> &nbsp; Portfolio
