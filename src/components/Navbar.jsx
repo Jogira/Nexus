@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa"; // Import the 
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo, menu, close } from "../assets";
+import { menu, close, pfp } from "../assets";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -35,17 +35,34 @@ const Navbar = () => {
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link
           to='/'
-          className='flex items-center gap-2'
+          className={`flex items-center gap-2 `}
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
-          <p className='text-white text-[18px] font-bold cursor-pointer flex '>
-            Jonathan&nbsp;
-            <span className='sm:block hidden'><span style={{ color: '#00f090' }}>|</span> Nexus Portfolio</span>
-          </p>
+          <div className="relative">
+            {/* <span className='sm:block hidden'> */}
+            <img
+              src={pfp}
+              alt='pfp'
+              style={{
+                transform: scrolled ? 'scale(0.40)' : 'none',
+                transition: 'transform 0.3s ease, left 0.3s ease, top 0.3s ease',
+                left: scrolled ? '-8rem' : '-10rem',
+                top: scrolled ? '-4rem' : '-1rem',
+                width: scrolled ? 'none' : '10rem',
+                height: scrolled ? 'none' : '10rem',
+              }}
+              className='object-contain absolute'
+            />
+            {/* </span> */}
+            <p className='text-white text-[18px] font-bold cursor-pointer flex'>
+              Jonathan&nbsp;
+              <span style={{ color: '#00f090' }}>| </span> <span className='sm:block hidden'>&nbsp; Nexus </span> &nbsp; Portfolio
+            </p>
+          </div>
+
         </Link>
 
         <ul className='list-none hidden sm:flex flex-row gap-10'>
@@ -72,7 +89,7 @@ const Navbar = () => {
           </li>
 
           {/* Additional PDF button */}
-          <li className='text-secondary hover:text-[#34ffb9] hover:text-white text-[25px] font-medium cursor-pointer'>
+          <li className='text-secondary hover:text-[#34ffb9] text-[25px] font-medium cursor-pointer'>
             <a href='./resume.pdf' title='Resume' target='_blank' rel='noopener noreferrer'>
               <FaFilePdf />
             </a>
@@ -125,8 +142,8 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-      </div>
-    </nav>
+      </div >
+    </nav >
   );
 };
 

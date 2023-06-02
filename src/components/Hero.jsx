@@ -13,7 +13,6 @@ const Hero = () => {
       audioRef.current.pause();
       setCurrentTime(audioRef.current.currentTime);
     } else {
-      console.log("Begna playing");
       const audio = new Audio('./water.mp3');
       audio.currentTime = currentTime;
       audioRef.current = audio;

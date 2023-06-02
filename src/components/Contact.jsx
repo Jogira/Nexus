@@ -210,7 +210,7 @@ const Contact = () => {
             />
           </label>
 
-          <div className="flex justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
             <button
               type='submit'
               className={`bg-tertiary py-3 px-8 font-bold shadow-md shadow-primary outline-none w-fit text-white rounded-xl ${isSubmitDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
@@ -218,15 +218,13 @@ const Contact = () => {
             >
               {loading ? 'Sending...' : 'Send'}
             </button>
-            <div className={`flex items-center`} onClick={handleEmailClick}>
+            <div className={`flex items-center mt-4 sm:mt-0`} onClick={handleEmailClick}>
               <FaEnvelope className="mr-2" />
               <span className={`text-white email-text ${emailCopied ? 'glow-animation' : ''}`}>
                 Jonathan.giraud4@gmail.com
               </span>
             </div>
           </div>
-
-
 
         </form>
       </motion.div>
