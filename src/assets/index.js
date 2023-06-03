@@ -1,5 +1,7 @@
 import logo from "../../kinoko.png";
 import pfp from "../../Chryseis.png";
+import frontend from "./frontend.png";
+import languages from "./languages.png";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -33,6 +35,8 @@ import tripguide from "./tripguide.png";
 
 export {
   logo,
+  frontend,
+  languages,
   backend,
   creator,
   mobile,

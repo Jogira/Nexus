@@ -31,14 +31,16 @@ const Hero = () => {
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>Hi, I'm <span className="text-[#915eff]">Jonathan,</span></h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            a software engineer & doglover, determined to expand my skill set and embrace new challenges. Let's create innovative solutions together!
+            a software engineer & doglover, determined to expand my skill set and tackle new challenges. Let's create innovative solutions together!
           </p>
         </div>
       </div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      <span className='lg:hidden'>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+      </span>
       <ComputersCanvas></ComputersCanvas>
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">

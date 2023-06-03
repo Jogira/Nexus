@@ -1,5 +1,7 @@
 import {
   mobile,
+  frontend,
+  languages,
   backend,
   creator,
   web,
@@ -38,6 +40,10 @@ export const navLinks = [
     title: "Work",
   },
   {
+    id: "projects",
+    title: "Projects"
+  },
+  {
     id: "contact",
     title: "Contact",
   }
@@ -45,21 +51,17 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
-    icon: web,
+    title: "Frontend Developer",
+    icon: frontend,
   },
   {
-    title: "React Native Developer",
-    icon: mobile,
+    title: "Multilingual Programmer",
+    icon: languages
   },
   {
     title: "Backend Developer",
     icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
-  },
+  }
 ];
 
 const technologies = [

@@ -60,12 +60,12 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
   )
 }
 
-const Works = () => {
+const Projects = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>My personal projects:</p>
-        <h2 className={styles.sectionHeadText}>Projects</h2>
+        <p className={styles.sectionSubText}>My personal</p>
+        <h2 className={styles.sectionHeadText}>PROJECTS</h2>
       </motion.div>
 
       <div className="w-full flex">
@@ -90,4 +90,4 @@ const Works = () => {
   )
 }
 
-export default SectionWrapper(Works, "works")
+export default SectionWrapper(Projects, "projects")

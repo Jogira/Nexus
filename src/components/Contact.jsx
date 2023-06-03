@@ -165,8 +165,8 @@ const Contact = () => {
         variants={slideIn('left', 'tween', 0.2, 1)}
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >
-        <p className={styles.sectionSubText}>Leave a message,</p>
-        <h3 className={styles.sectionHeadText}>contact me:</h3>
+        <p className={styles.sectionSubText}>Leave a message, get in</p>
+        <h3 className={styles.sectionHeadText}>CONTACT.</h3>
         <form ref={formRef} onSubmit={handleSubmit} className='mt-12 flex flex-col gap-8'>
           <label className='flex flex-col'>
             <span className='text-white font-medium mb-4'>Name</span>
