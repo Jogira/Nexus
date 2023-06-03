@@ -59,7 +59,7 @@ const Navbar = () => {
             </span>
             <p className='text-white text-[18px] font-bold cursor-pointer flex'>
               Jonathan&nbsp;
-              <span style={{ color: '#00f090' }}>| </span> <span className='sm:block hidden'>&nbsp; Nexus </span> &nbsp; Portfolio
+              <span style={{ color: '#00f090' }}>| </span> <span className='sm:block hidden'>&nbsp;Nexus</span> &nbsp;Portfolio
             </p>
           </div>
 
