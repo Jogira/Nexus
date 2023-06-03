@@ -13,7 +13,7 @@ const Hero = () => {
       audioRef.current.pause();
       setCurrentTime(audioRef.current.currentTime);
     } else {
-      const audio = new Audio('https://github.com/Jogira/Nexus/blob/main/src/assets/water.mp3');
+      const audio = new Audio('src/assets/water.mp3');
       audio.currentTime = currentTime;
       audioRef.current = audio;
       audio.play();
@@ -31,7 +31,7 @@ const Hero = () => {
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>Hi, I'm <span className="text-[#915eff]">Jonathan,</span></h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            a driven software engineer & doglover, determined to expand my skill set and embrace new challenges. Let's make innovative solutions together!
+            a software engineer & doglover, determined to expand my skill set and embrace new challenges. Let's create innovative solutions together!
           </p>
         </div>
       </div>
