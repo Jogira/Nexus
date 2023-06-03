@@ -90,7 +90,7 @@ const Navbar = () => {
 
           {/* Additional PDF button */}
           <li className='text-secondary hover:text-[#34ffb9] text-[25px] font-medium cursor-pointer'>
-            <a href='./resume.pdf' title='Resume' target='_blank' rel='noopener noreferrer'>
+            <a href='https://raw.githubusercontent.com/Jogira/Nexus/main/resume.pdf' title='Resume' target='_blank' rel='noopener noreferrer'>
               <FaFilePdf />
             </a>
           </li>
@@ -135,7 +135,7 @@ const Navbar = () => {
 
               {/* Additional PDF button */}
               <li className='text-secondary hover:text-white text-[16px] font-medium cursor-pointer'>
-                <a href='./resume.pdf' title='Resume' target='_blank' rel='noopener noreferrer'>
+                <a href='https://raw.githubusercontent.com/Jogira/Nexus/main/resume.pdf' title='Resume' target='_blank' rel='noopener noreferrer'>
                   Resume
                 </a>
               </li>

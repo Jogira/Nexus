@@ -13,7 +13,7 @@ const Hero = () => {
       audioRef.current.pause();
       setCurrentTime(audioRef.current.currentTime);
     } else {
-      const audio = new Audio('./water.mp3');
+      const audio = new Audio('./src/assets/water.mp3');
       audio.currentTime = currentTime;
       audioRef.current = audio;
       audio.play();
