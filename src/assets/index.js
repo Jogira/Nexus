@@ -3,9 +3,6 @@ import pfp from "../../Chryseis.png";
 import frontend from "./frontend.png";
 import languages from "./languages.png";
 import backend from "./backend.png";
-import creator from "./creator.png";
-import mobile from "./mobile.png";
-import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
@@ -24,10 +21,8 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import staples from "./company/staples.png";
+import ppllc from "./company/ppllc.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -38,9 +33,6 @@ export {
   frontend,
   languages,
   backend,
-  creator,
-  mobile,
-  web,
   github,
   menu,
   close,
@@ -57,10 +49,8 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
+  staples,
+  ppllc,
   carrent,
   jobit,
   tripguide,

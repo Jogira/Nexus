@@ -159,7 +159,7 @@ const Contact = () => {
   const isSubmitDisabled = !(validEmail && validName && validMessage);
 
   return (
-    <div className='xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>
+    <div className='xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>
       <ToastContainer />
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
