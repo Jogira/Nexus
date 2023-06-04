@@ -43,12 +43,6 @@ const BallCanvas = ({ technologies }) => {
   React.useEffect(() => {
     const controls = controlsRef.current;
     if (controls) {
-      controls.mouseButtons = {
-        LEFT: controls.mouseButtons.PAN,
-        RIGHT: controls.mouseButtons.ORBIT,
-        MIDDLE: controls.mouseButtons.ZOOM,
-      };
-
       controls.touches = {
         ONE: controls.touches.PAN,
         TWO: controls.touches.DOLLY_ROTATE,
@@ -79,11 +73,6 @@ const BallCanvasControls = React.forwardRef((props, ref) => {
       minDistance={5} // Adjust the minimum distance from the center
       maxDistance={15} // Adjust the maximum distance from the center
       distance={10} // Adjust the initial distance of the camera
-      mouseButtons={{
-        LEFT: 2, // Use value 2 for left mouse button panning
-        MIDDLE: 1,
-        RIGHT: 0,
-      }}
       touches={{
         ONE: 'pan', // Use 'pan' for single touch panning
         TWO: 'rotate',
