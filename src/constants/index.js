@@ -5,21 +5,20 @@ import {
   javascript,
   typescript,
   html,
+  django,
+  angular,
+  bootstrap,
+  csharp,
+  python,
+  sql,
   css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
   git,
   figma,
-  docker,
   staples,
   ppllc,
   carrent,
   jobit,
   tripguide,
-  threejs,
 } from "../assets";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -61,6 +60,30 @@ const services = [
 
 const technologies = [
   {
+    name: "Angular",
+    icon: angular,
+  },
+  {
+    name: "Bootstrap",
+    icon: bootstrap,
+  },
+  {
+    name: "C#",
+    icon: csharp,
+  },
+  {
+    name: "Django",
+    icon: django,
+  },
+  {
+    name: "Python",
+    icon: python,
+  },
+  {
+    name: "Sql",
+    icon: sql,
+  },
+  {
     name: "HTML 5",
     icon: html,
   },
@@ -77,40 +100,12 @@ const technologies = [
     icon: typescript,
   },
   {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
     name: "git",
     icon: git,
   },
   {
     name: "figma",
     icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
   },
 ];
 

@@ -8,21 +8,21 @@ const Ball = ({ imgUrl, index }) => {
   const [decal] = useTexture([imgUrl]);
 
   const position = React.useMemo(() => {
-    const ballsPerRow = window.innerWidth < 1000 ? 2 : 7;
+    const ballsPerRow = window.innerWidth < 500 ? 2 : 6;
     const row = Math.floor(index / ballsPerRow);
     const column = index % ballsPerRow;
-    const spacing = window.innerWidth < 1000 ? 2 : 1.5;
-    const xOffset = window.innerWidth < 1000 ? 9 : 4.5;
-    const yOffset = 1.3;
+    const spacing = window.innerWidth < 1000 ? 1.5 : 1.5;
+    const xOffset = window.innerWidth < 1000 ? 0.7 : 3.7;
+    const yOffset = 1;
     const x = column * spacing - xOffset;
     const y = -row * spacing + yOffset;
     return [x, y, 0];
   }, [index]);
 
   return (
-    <Float speed={1.5} rotationIntensity={0.4} floatIntensity={0.5}>
+    <Float speed={1.5} rotationIntensity={0.4} floatIntensity={0.3}>
       <ambientLight intensity={0} />
-      <directionalLight position={[0, 0, 0.009]} />
+      <directionalLight position={[0, 0, 0.005]} />
       <mesh castShadow receiveShadow scale={0.7} position={position}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial color="#00368c" polygonOffset polygonOffsetFactor={-5} flatShading />
@@ -38,16 +38,28 @@ const BallCanvas = ({ technologies }) => {
     fov: 20, // Adjust the FOV value to lower the camera's field of view
   }), []);
 
+  const controlsRef = React.useRef();
+
+  React.useEffect(() => {
+    const controls = controlsRef.current;
+    if (controls) {
+      controls.mouseButtons = {
+        LEFT: controls.mouseButtons.PAN,
+        RIGHT: controls.mouseButtons.ORBIT,
+        MIDDLE: controls.mouseButtons.ZOOM,
+      };
+
+      controls.touches = {
+        ONE: controls.touches.PAN,
+        TWO: controls.touches.DOLLY_ROTATE,
+      };
+    }
+  }, []);
+
   return (
     <div style={{ width: '100%', height: '30vh' }}>
       <Canvas frameloop="always" gl={{ preserveDrawingBuffer: true }} style={{ width: '100%', height: '140%' }} camera={cameraSettings}>
-        <OrbitControls
-          enableZoom={false}
-          autoRotateSpeed={0} // Adjust the speed of auto rotation if desired
-          minDistance={5} // Adjust the minimum distance from the center
-          maxDistance={15} // Adjust the maximum distance from the center
-          distance={10} // Adjust the initial distance of the camera
-        />
+        <BallCanvasControls ref={controlsRef} enableZoom={false} />
         {technologies.map((technology, index) => (
           <Ball key={technology.name} imgUrl={technology.icon} index={index} />
         ))}
@@ -56,5 +68,28 @@ const BallCanvas = ({ technologies }) => {
     </div>
   );
 };
+
+const BallCanvasControls = React.forwardRef((props, ref) => {
+  return (
+    <OrbitControls
+      ref={ref}
+      enableZoom={props.enableZoom}
+      enablePan={props.enablePan} // Add enablePan prop to enable panning
+      autoRotateSpeed={0} // Adjust the speed of auto rotation if desired
+      minDistance={5} // Adjust the minimum distance from the center
+      maxDistance={15} // Adjust the maximum distance from the center
+      distance={10} // Adjust the initial distance of the camera
+      mouseButtons={{
+        LEFT: 2, // Use value 2 for left mouse button panning
+        MIDDLE: 1,
+        RIGHT: 0,
+      }}
+      touches={{
+        ONE: 'pan', // Use 'pan' for single touch panning
+        TWO: 'rotate',
+      }}
+    />
+  );
+});
 
 export default BallCanvas;
