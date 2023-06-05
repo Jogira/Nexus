@@ -4,6 +4,7 @@ import frontend from "./frontend.png";
 import languages from "./languages.png";
 import backend from "./backend.png";
 import github from "./github.png";
+import viewIcon from "./viewIcon.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
@@ -24,15 +25,19 @@ import sql from "./tech/sql.png";
 import staples from "./company/staples.png";
 import ppllc from "./company/ppllc.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+
+import vgdb from "./projects/vgdb.png";
+import nexus from "./projects/nexus.png";
+import floodmap from "./projects/floodmap.png";
+import aspvid from "./projects/aspvid.png";
+
 
 export {
   logo,
   frontend,
   languages,
   backend,
+  viewIcon,
   github,
   menu,
   close,
@@ -50,8 +55,9 @@ export {
   typescript,
   staples,
   ppllc,
-  carrent,
-  jobit,
-  tripguide,
   pfp,
+  vgdb,
+  nexus,
+  aspvid,
+  floodmap,
 };

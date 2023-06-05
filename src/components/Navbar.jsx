@@ -77,7 +77,7 @@ const Navbar = () => {
             </li>
           ))}
           <li className='text-secondary hover:text-[#4078c0] text-[25px] font-medium cursor-pointer'>
-            <a href='https://github.com/Jogira' title="Github" target='_blank' rel='noopener noreferrer'>
+            <a href='https://github.com/Jogira' title="GitHub" target='_blank' rel='noopener noreferrer'>
               <FaGithub />
             </a>
           </li>
@@ -124,7 +124,7 @@ const Navbar = () => {
               ))}
               <li className='text-secondary hover:text-white text-[16px] font-medium cursor-pointer'>
                 <a href='https://github.com/Jogira' target='_blank' rel='noopener noreferrer'>
-                  Github
+                  GitHub
                 </a>
               </li>
               <li className='text-secondary hover:text-white text-[16px] font-medium cursor-pointer'>

@@ -16,9 +16,10 @@ import {
   figma,
   staples,
   ppllc,
-  carrent,
-  jobit,
-  tripguide,
+  vgdb,
+  nexus,
+  floodmap,
+  aspvid,
 } from "../assets";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -117,9 +118,9 @@ const experiences = [
     iconBg: "#FFFFFF",
     date: "May 2019 - Sept 2019",
     points: [
-      "Provided exceptional customer service by assisting customers with technical inquiries, troubleshooting hardware and software issues or installation, and recommending appropriate products and solutions to meet their needs.",
-      "Actively contributed to the sales team by consistently achieving and exceeding monthly sales targets through upselling and cross-selling strategies, resulting in increased revenue and customer satisfaction.",
-      "Successfully conducted product demonstrations to educate customers on the use and functionality of various technology products, including computers, printers, and accessories.",
+      "Assisted customers with technical inquiries, troubleshot hardware and software issues or installation, and recommended appropriate products and solutions to meet their needs.",
+      "Actively contributed to the sales team by achieving monthly sales targets through upselling and cross-selling strategies, resulting in increased revenue and customer satisfaction.",
+      "Demonstrated products to educate customers on the use and functionality of various technology, including computers, printers, and accessories.",
     ],
   },
   {
@@ -167,67 +168,94 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Zweiton VG DB",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Video game database created using Angular that allows users to search, filter, and view further game details from the Rawg.io API."
+    ,
     tags: [
       {
-        name: "react",
-        color: "blue-text-gradient",
+        name: "angular",
+        color: "pink-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "API",
+        color: "green-text-gradient",
+      },
+      {
+        name: "typescript",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: vgdb,
+    source_code_link: "https://github.com/Jogira/ng-video-game-db",
+    live_demo_link: "https://zweiton-vg-db.netlify.app/"
+  },
+  {
+    name: "ASP.VID",
+    description:
+      "A movie database built with ASP.NET MVC. Supports account creation and CRUD operations on movies stored locally."
+    ,
+    tags: [
+      {
+        name: ".NET",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "databases",
+        color: "yellow-text-gradient",
+      },
+      {
+        name: "C#",
+        color: "violet-text-gradient",
+      },
+    ],
+    image: aspvid,
+    source_code_link: "https://github.com/Jogira/DvD-Rental",
+  },
+  {
+    name: "Capstone Flood Map",
+    description:
+      "A flood map showing which areas that are most the susceptible to flooding in Richmond, which was made with ARCgis and Jupyter."
+    ,
+    tags: [
+      {
+        name: "ARCgis",
+        color: "green-text-gradient",
+      },
+      {
+        name: "jupyter",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "senior_project",
+        color: "yellow-text-gradient",
+      },
+    ],
+    image: floodmap,
+    source_code_link: "https://github.com/Jogira/Richmond-Runoff",
+    live_demo_link: "https://vcu.maps.arcgis.com/apps/webappviewer/index.html?id=18ec9de92d53400a9e1fbf9b49c7879b"
+  },
+  {
+    name: "Nexus Portfolio",
+    description:
+      "This website! My revamped portfolio made with React and ThreeJS to display my coding skills and resume in a (hopefully) cool way."
+    ,
+    tags: [
+      {
+        name: "threeJS",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "react",
         color: "green-text-gradient",
       },
       {
         name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: carrent,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
-        name: "react",
         color: "blue-text-gradient",
       },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: nexus,
+    source_code_link: "https://github.com/Jogira/Nexus",
   },
 ];
 
