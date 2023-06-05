@@ -1,29 +1,67 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { SpotLightHelper } from "three";
 
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const computer = useGLTF("./dogpc/retro.gltf");
+  const { gl, scene } = useThree();
+  const spotLightRef1 = React.useRef();
+  const spotLightRef2 = React.useRef();
+
+  React.useEffect(() => {
+    // const addSpotLightHelper = (spotLightRef) => {
+    //   if (spotLightRef.current) {
+    //     const spotLightHelper = new SpotLightHelper(spotLightRef.current);
+    //     scene.add(spotLightHelper);
+
+    //     return () => {
+    //       scene.remove(spotLightHelper);
+    //     };
+    //   }
+    // };
+
+    // const cleanupFunctions = [
+    //   addSpotLightHelper(spotLightRef1),
+    //   addSpotLightHelper(spotLightRef2),
+    // ];
+
+    return () => {
+      cleanupFunctions.forEach((cleanup) => cleanup && cleanup());
+    };
+  }, [gl, scene]);
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor='black' />
+      <hemisphereLight intensity={0.50} groundColor="#87CEEB" skyColor="blue" />
       <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1}
+        ref={spotLightRef1}
+        position={[14, -10, -20]}
+        angle={1}
+        color="#971088"
+        penumbra={0}
+        intensity={5}
         castShadow
         shadow-mapSize={1024}
       />
-      <pointLight intensity={1} />
+      <spotLight
+        ref={spotLightRef2}
+        position={[-35, 0, 10]}
+        angle={1}
+        color="#33feb1"
+        penumbra={1}
+        intensity={5}
+        castShadow
+        shadow-mapSize={1024}
+      />
+      <pointLight intensity={1} groundColor="black" />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
+        scale={isMobile ? 6 : 9}
         position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
+        rotation={[0, 1, 0]}
       />
     </mesh>
   );
@@ -55,14 +93,16 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      frameloop='always'
+      frameloop="always"
       shadows
       dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: [5, 5, 90], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
+          autoRotate
+          autoRotateSpeed={2}
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
