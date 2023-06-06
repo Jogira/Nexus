@@ -15,6 +15,11 @@ const Hero = () => {
     } else {
       const audio = new Audio('https://github.com/Jogira/Nexus/blob/main/src/assets/highFashion.mp3?raw=true');
       audio.currentTime = currentTime;
+      audio.loop = true; // Enable looping
+      audio.addEventListener('ended', () => {
+        audio.currentTime = 0; // Restart playback from the beginning
+        audio.play();
+      });
       audioRef.current = audio;
       audio.play();
     }
