@@ -1,5 +1,7 @@
 My portfolio made with ThreeJS and React by following various tutorials found on Youtube.
 
+The name "Nexus" is from in reference to Yume Nikki, as this portfolio is a central hub for my work experience and projects.
+
 
 ## 3D Models 🖥
 "Shiba" (https://sketchfab.com/3d-models/shiba-faef9fe5ace445e7b2989d1c1ece361c) 
