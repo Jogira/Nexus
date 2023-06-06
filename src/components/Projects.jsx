@@ -62,7 +62,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
           <h3 className="text-white font-bold text-[24px]">
             {name}
           </h3>
-          <p className="mt-2 text-secondary text-[14px]">
+          <p className="mt-2 text-secondary text-[15.6px]">
             {description}
           </p>
         </div>
@@ -90,7 +90,7 @@ const Projects = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]">
+          className="mt-3 text-secondary text-[19px] max-w-3xl leading-[30px]">
           Here are some projects that highlight my skills and tech stack.
           The cards provide an overview of their respective projects, along with links to each project's GitHub repository and live demos if available.
           I chose these projects based on trending, industry-standard technologies to

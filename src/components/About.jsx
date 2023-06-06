@@ -39,15 +39,17 @@ const About = () => {
 
       <motion.p
         variants={fadeIn('', '', 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="mt-4 text-secondary text-[19px] max-w-3xl leading-[30px]"
       >
         As a budding full stack software engineer, I've honed my programming skills primarily in{' '}
         <span className="text-[#4584b6] font-bold">Python,</span>{' '}
         <span className="text-[#9B4993] font-bold">C#,</span> and{' '}
         <span className="text-[#f7df1e] font-bold">Javascript.</span> I've also used various frameworks (<span className="text-[#29A071] font-bold">Django</span>/<span className="text-[#DE002D] font-bold">Angular</span>/<span className="text-[#4D29C8] font-bold">.NET</span>) to develop responsive, modern webapps.
-        <br />
-        I'm quick to learn and eager to master new technologies so I can contribute cutting-edge
+        <br></br>I'm quick to learn and eager to master new technologies so I can contribute cutting-edge
         solutions that leave an <span className="italic font-bold">impact</span> on the tech world.
+        <br></br>
+        <br></br>
+        I'm also a big fan of CRT monitors, dogs, Halloween, video games, art, and animation.
       </motion.p>
 
       <div className="mt-10 flex flex-wrap gap-20 justify-center">

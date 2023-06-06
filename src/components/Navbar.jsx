@@ -47,7 +47,7 @@ const Navbar = () => {
                 src={pfp}
                 alt='pfp'
                 style={{
-                  transform: scrolled ? 'scale(0.40)' : 'none',
+                  transform: scrolled ? 'scale(0.35)' : 'none',
                   transition: 'transform 0.3s ease, left 0.3s ease, top 0.3s ease',
                   left: scrolled ? '-8rem' : '-10rem',
                   top: scrolled ? '-4rem' : '-1rem',

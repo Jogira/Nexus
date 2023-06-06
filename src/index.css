@@ -19,6 +19,14 @@
   display: block;
 }
 
+.gradient {
+  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 1) 16%, rgba(3, 13, 29, 1) 34%, rgba(0, 0, 33, 1) 67%, rgba(0, 0, 0, 1) 80%);
+  background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 1) 16%, rgba(3, 13, 29, 1) 34%, rgba(0, 0, 33, 1) 67%, rgba(0, 0, 0, 1) 80%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 16%, rgba(3, 13, 29, 1) 34%, rgba(0, 0, 33, 1) 67%, rgba(0, 0, 0, 1) 80%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
+}
+
 .black-gradient {
   background: #000000;
   /* fallback for old browsers */
@@ -33,17 +41,17 @@
 }
 
 .violet-gradient {
-  background: #804dee;
-  background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
+  background: #00ff91;
+  background: linear-gradient(-90deg, #00ff91 0%, rgba(60, 51, 80, 0) 100%);
   background: -webkit-linear-gradient(-90deg,
-      #804dee 0%,
+      #00ff91 0%,
       rgba(60, 51, 80, 0) 100%);
 }
 
 .green-pink-gradient {
-  background: "#00cea8";
-  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+  background: "#000000";
+  background: linear-gradient(90.13deg, #33ff00 1.9%, #971088 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #33ff00 1.9%, #971088 70.5%);
 }
 
 .orange-text-gradient {

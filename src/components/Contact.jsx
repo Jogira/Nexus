@@ -3,7 +3,6 @@ import { useLayoutEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { styles } from '../styles';
-import { EarthCanvas } from './canvas';
 import { Vaporwave } from './canvas';
 import { SectionWrapper } from '../hoc';
 
@@ -187,7 +186,7 @@ const Contact = () => {
 
       <ToastContainer />
       <motion.div
-        className="bg-stone-950/90 p-8 rounded-2xl"
+        className="bg-neutral-950/90 p-8 rounded-2xl"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5 }}
@@ -208,7 +207,7 @@ const Contact = () => {
               onChange={handleChange}
               required
               placeholder={isMobile ? 'What is your name?' : 'How would you like to be addressed?'}
-              className='bg-stone-900 py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium'
+              className='bg-neutral-900 py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium'
             />
           </label>
           <label className='flex flex-col'>
@@ -221,7 +220,7 @@ const Contact = () => {
               onBlur={handleBlur}
               required
               placeholder="What is your email?"
-              className={`bg-stone-900 py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium ${!validEmail && emailTouched ? 'border-red-500' : ''
+              className={`bg-neutral-900 py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium ${!validEmail && emailTouched ? 'border-red-500' : ''
                 }`}
             />
             {!validEmail && emailTouched && (
@@ -238,14 +237,15 @@ const Contact = () => {
               onChange={handleChange}
               required
               placeholder='What would you like to say?'
-              className='bg-stone-900 py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium'
+              className='bg-neutral-900 py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium'
             />
           </label>
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
             <button
               type='submit'
-              className={`bg-tertiary py-3 px-8 font-bold shadow-md shadow-primary outline-none w-fit text-white rounded-xl ${isSubmitDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+              className={`bg-green-800 ${!isSubmitDisabled ? 'hover:bg-green-500' : ''} py-3 px-8 font-bold shadow-md shadow-primary outline-none w-fit text-white rounded-xl ${isSubmitDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+
               disabled={isSubmitDisabled}
             >
               {loading ? 'Sending...' : 'Send'}

@@ -25,7 +25,7 @@ const Ball = ({ imgUrl, index, isMobile }) => {
       <directionalLight position={[0, 0, 0.005]} />
       <mesh castShadow receiveShadow scale={isMobile ? 0.3 : 0.7} position={position}>
         <icosahedronGeometry args={[1, 1]} />
-        <meshStandardMaterial color="#00368c" polygonOffset polygonOffsetFactor={-5} flatShading />
+        <meshStandardMaterial color="#092553" polygonOffset polygonOffsetFactor={-5} flatShading />
         <Decal position={[0, 0, 1]} rotation={[2 * Math.PI, 0, 6.25]} map={decal} />
       </mesh>
     </Float>
