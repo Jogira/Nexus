@@ -4,26 +4,26 @@ import { Decal, Float, OrbitControls, Preload, useTexture } from '@react-three/d
 
 import CanvasLoader from '../Loader';
 
-const Ball = ({ imgUrl, index }) => {
+const Ball = ({ imgUrl, index, isMobile }) => {
   const [decal] = useTexture([imgUrl]);
 
   const position = React.useMemo(() => {
-    const ballsPerRow = window.innerWidth < 500 ? 2 : 6;
+    const ballsPerRow = isMobile ? 2 : 6;
     const row = Math.floor(index / ballsPerRow);
     const column = index % ballsPerRow;
-    const spacing = window.innerWidth < 1000 ? 1.5 : 1.5;
-    const xOffset = window.innerWidth < 1000 ? 0.7 : 3.7;
-    const yOffset = 1;
+    const spacing = isMobile ? 0.6 : 1.5;
+    const xOffset = isMobile ? 0.3 : 3.7;
+    const yOffset = isMobile ? 1.8 : 1;
     const x = column * spacing - xOffset;
     const y = -row * spacing + yOffset;
     return [x, y, 0];
-  }, [index]);
+  }, [index, isMobile]);
 
   return (
     <Float speed={1.5} rotationIntensity={0.4} floatIntensity={0.3}>
       <ambientLight intensity={0} />
       <directionalLight position={[0, 0, 0.005]} />
-      <mesh castShadow receiveShadow scale={0.7} position={position}>
+      <mesh castShadow receiveShadow scale={isMobile ? 0.3 : 0.7} position={position}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial color="#00368c" polygonOffset polygonOffsetFactor={-5} flatShading />
         <Decal position={[0, 0, 1]} rotation={[2 * Math.PI, 0, 6.25]} map={decal} />
@@ -40,13 +40,14 @@ const BallCanvas = ({ technologies }) => {
 
   const controlsRef = React.useRef();
 
+  const isMobile = window.innerWidth < 768; // Set the breakpoint for mobile devices
 
   return (
-    <div style={{ width: '100%', height: '30vh' }}>
+    <div style={{ width: '100%', height: isMobile ? '60vh' : '30vh' }}>
       <Canvas frameloop="always" gl={{ preserveDrawingBuffer: true }} style={{ width: '100%', height: '140%' }} camera={cameraSettings}>
         <BallCanvasControls ref={controlsRef} enableZoom={false} />
         {technologies.map((technology, index) => (
-          <Ball key={technology.name} imgUrl={technology.icon} index={index} />
+          <Ball key={technology.name} imgUrl={technology.icon} index={index} isMobile={isMobile} />
         ))}
         <Preload all />
       </Canvas>
@@ -64,10 +65,6 @@ const BallCanvasControls = React.forwardRef((props, ref) => {
       minDistance={5} // Adjust the minimum distance from the center
       maxDistance={15} // Adjust the maximum distance from the center
       distance={10} // Adjust the initial distance of the camera
-      touches={{
-        ONE: 'pan', // Use 'pan' for single touch panning
-        TWO: 'rotate',
-      }}
     />
   );
 });

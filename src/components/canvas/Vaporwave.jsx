@@ -17,7 +17,7 @@ const VaporwaveCanvas = () => {
 
         // Scene
         const scene = new THREE.Scene();
-        const fog = new THREE.Fog('#000000', 1, 2.5);
+        const fog = new THREE.Fog("#000000", 1, 2.5);
         scene.fog = fog;
 
         // Textures
@@ -25,9 +25,6 @@ const VaporwaveCanvas = () => {
         const gridTexture = textureLoader.load("/grid.png");
         const heightTexture = textureLoader.load("/displacement.png");
         const metalnessTexture = textureLoader.load("/metalness.png");
-
-
-
 
         // Plane
         const parameters = {
@@ -110,10 +107,14 @@ const VaporwaveCanvas = () => {
 
         // Controls
         const controls = new OrbitControls(camera, canvas);
-        controls.enableRotate = false; // Disable rotation
-        controls.enablePan = false; // Disable panning
-        controls.enableZoom = false; // Disable zooming
+        controls.enableRotate = true;
+        controls.enablePan = false;
+        controls.enableZoom = false;
         controls.enableDamping = true;
+        controls.minPolarAngle = Math.PI * 0.30; // Minimum rotation angle (5 degrees)
+        controls.maxPolarAngle = Math.PI * 0.45; // Maximum rotation angle (45 degrees)
+        controls.minAzimuthAngle = 0; // Minimum azimuth angle (disable left rotation)
+        controls.maxAzimuthAngle = 0; // Minimum azimuth angle (disable right rotation) 
 
         // Renderer
         const renderer = new THREE.WebGLRenderer({
@@ -124,15 +125,13 @@ const VaporwaveCanvas = () => {
         renderer.setSize(sizes.width, sizes.height);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-
         // Post-processing
         const effectComposer = new EffectComposer(renderer);
         effectComposer.setSize(sizes.width, sizes.height);
         effectComposer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-        renderer.autoClear = false
+        renderer.autoClear = false;
         const renderPass = new RenderPass(scene, camera);
-
         effectComposer.addPass(renderPass);
 
         const rgbShiftPass = new ShaderPass(RGBShiftShader);
@@ -202,6 +201,5 @@ const VaporwaveCanvas = () => {
         </div>
     );
 };
-
 
 export default VaporwaveCanvas;

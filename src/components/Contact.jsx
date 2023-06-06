@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useRef } from 'react';
+import { useLayoutEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { styles } from '../styles';
@@ -19,6 +19,27 @@ const Contact = () => {
 
   const [emailCopied, setEmailCopied] = useState(false);
 
+
+
+  // Helper function to check if the user is on a mobile device
+  function useIsMobile() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useLayoutEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+      };
+
+      window.addEventListener('resize', handleResize);
+      handleResize(); // Call it initially to set the initial value
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+
+    return isMobile;
+  }
 
 
 
@@ -158,6 +179,7 @@ const Contact = () => {
   };
 
   const isSubmitDisabled = !(validEmail && validName && validMessage);
+  const isMobile = useIsMobile();
 
   return (
     <div className='xl:flex-row gap-10 overflow-hidden mx-auto ' style={{ maxWidth: '50rem' }}>
@@ -172,7 +194,11 @@ const Contact = () => {
       >
         <p className={styles.sectionSubText}>Leave a message, get in</p>
         <h3 className={styles.sectionHeadText}>CONTACT.</h3>
-        <form ref={formRef} onSubmit={handleSubmit} className='mt-12 flex flex-col gap-8'>
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          className={`flex flex-col gap-8 ${isMobile ? '' : 'mt-12'}`}
+        >
           <label className='flex flex-col'>
             <span className='text-white font-medium mb-4'>Name</span>
             <input
@@ -181,7 +207,7 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               required
-              placeholder="How would you like to be addressed?"
+              placeholder={isMobile ? 'What is your name?' : 'How would you like to be addressed?'}
               className='bg-stone-900 py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium'
             />
           </label>
@@ -202,10 +228,11 @@ const Contact = () => {
               <span className='text-red-500 text-sm'>Please enter a valid email address.</span>
             )}
           </label>
+
           <label className='flex flex-col'>
             <span className='text-white font-medium mb-4'>Message</span>
             <textarea
-              rows='7'
+              rows={isMobile ? '2' : '5'}
               name='message'
               value={form.message}
               onChange={handleChange}
