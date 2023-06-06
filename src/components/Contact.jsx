@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { styles } from '../styles';
 import { EarthCanvas } from './canvas';
+import { Vaporwave } from './canvas';
 import { SectionWrapper } from '../hoc';
 
 import { slideIn } from '../utils/motion';
@@ -159,11 +160,15 @@ const Contact = () => {
   const isSubmitDisabled = !(validEmail && validName && validMessage);
 
   return (
-    <div className='xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>
+    <div className='xl:flex-row gap-10 overflow-hidden mx-auto ' style={{ maxWidth: '50rem' }}>
+
+
       <ToastContainer />
       <motion.div
-        variants={slideIn('left', 'tween', 0.2, 1)}
-        className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
+        className="bg-stone-950/90 p-8 rounded-2xl"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5 }}
       >
         <p className={styles.sectionSubText}>Leave a message, get in</p>
         <h3 className={styles.sectionHeadText}>CONTACT.</h3>
@@ -177,7 +182,7 @@ const Contact = () => {
               onChange={handleChange}
               required
               placeholder="How would you like to be addressed?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium'
+              className='bg-stone-900 py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium'
             />
           </label>
           <label className='flex flex-col'>
@@ -190,7 +195,7 @@ const Contact = () => {
               onBlur={handleBlur}
               required
               placeholder="What is your email?"
-              className={`bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium ${!validEmail && emailTouched ? 'border-red-500' : ''
+              className={`bg-stone-900 py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium ${!validEmail && emailTouched ? 'border-red-500' : ''
                 }`}
             />
             {!validEmail && emailTouched && (
@@ -206,7 +211,7 @@ const Contact = () => {
               onChange={handleChange}
               required
               placeholder='What would you like to say?'
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium'
+              className='bg-stone-900 py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium'
             />
           </label>
 
@@ -229,12 +234,6 @@ const Contact = () => {
         </form>
       </motion.div>
 
-      <motion.div
-        variants={slideIn('right', 'tween', 0.2, 1)}
-        className='xl:flex-1 xl:h-atuo md:h-[550px] h-[350px]'
-      >
-        <EarthCanvas />
-      </motion.div>
     </div>
   );
 };

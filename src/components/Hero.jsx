@@ -28,12 +28,13 @@ const Hero = () => {
           <div onClick={play} className="w-5 h-5 rounded-full bg-[#915eff] z-10" />
           <div className="w-1 sm:h-80 h-40 violet-gradient" />
         </div>
-        <div>
+        <div className="z-50">
           <h1 className={`${styles.heroHeadText} text-white`}>Hi, I'm <span className="text-[#00f090]">Jonathan</span>,</h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+          <p className={`${styles.heroSubText} mt-2 text-white-100`} style={{ zIndex: 100 }}>
             a software engineer & doglover, determined to expand my skill set and tackle new challenges. Let's create innovative solutions together!
           </p>
         </div>
+
       </div>
       <span className='lg:hidden'>
         <br></br>

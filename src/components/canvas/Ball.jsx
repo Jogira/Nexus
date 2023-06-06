@@ -40,15 +40,6 @@ const BallCanvas = ({ technologies }) => {
 
   const controlsRef = React.useRef();
 
-  React.useEffect(() => {
-    const controls = controlsRef.current;
-    if (controls) {
-      controls.touches = {
-        ONE: controls.touches.PAN,
-        TWO: controls.touches.DOLLY_ROTATE,
-      };
-    }
-  }, []);
 
   return (
     <div style={{ width: '100%', height: '30vh' }}>

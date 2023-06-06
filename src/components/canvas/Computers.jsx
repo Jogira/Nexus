@@ -7,54 +7,55 @@ import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
   const computer = useGLTF("./dogpc/retro.gltf");
+  // const computer = useGLTF("./doglain/lain.gltf");
   const { gl, scene } = useThree();
-  const spotLightRef1 = React.useRef();
-  const spotLightRef2 = React.useRef();
+  // const spotLightRef1 = React.useRef();
+  // const spotLightRef2 = React.useRef();
 
-  React.useEffect(() => {
-    // const addSpotLightHelper = (spotLightRef) => {
-    //   if (spotLightRef.current) {
-    //     const spotLightHelper = new SpotLightHelper(spotLightRef.current);
-    //     scene.add(spotLightHelper);
+  // React.useEffect(() => {
+  //   const addSpotLightHelper = (spotLightRef) => {
+  //     if (spotLightRef.current) {
+  //       const spotLightHelper = new SpotLightHelper(spotLightRef.current);
+  //       scene.add(spotLightHelper);
 
-    //     return () => {
-    //       scene.remove(spotLightHelper);
-    //     };
-    //   }
-    // };
+  //       return () => {
+  //         scene.remove(spotLightHelper);
+  //       };
+  //     }
+  //   };
 
-    // const cleanupFunctions = [
-    //   addSpotLightHelper(spotLightRef1),
-    //   addSpotLightHelper(spotLightRef2),
-    // ];
+  //   const cleanupFunctions = [
+  //     addSpotLightHelper(spotLightRef1),
+  //     addSpotLightHelper(spotLightRef2),
+  //   ];
 
-    return () => {
-      cleanupFunctions.forEach((cleanup) => cleanup && cleanup());
-    };
-  }, [gl, scene]);
+  //   return () => {
+  //     cleanupFunctions.forEach((cleanup) => cleanup && cleanup());
+  //   };
+  // }, [gl, scene]);
 
   return (
     <mesh>
       <hemisphereLight intensity={0.50} groundColor="#87CEEB" skyColor="blue" />
       <spotLight
-        ref={spotLightRef1}
+        // ref={spotLightRef1}
         position={[14, -10, -20]}
         angle={1}
         color="#971088"
         penumbra={0}
         intensity={5}
         castShadow
-        shadow-mapSize={1024}
+        shadow-mapSize={512}
       />
       <spotLight
-        ref={spotLightRef2}
+        // ref={spotLightRef2}
         position={[-35, 0, 10]}
         angle={1}
         color="#33feb1"
         penumbra={1}
         intensity={5}
         castShadow
-        shadow-mapSize={1024}
+        shadow-mapSize={512}
       />
       <pointLight intensity={1} groundColor="black" />
       <primitive
@@ -102,7 +103,7 @@ const ComputersCanvas = () => {
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           autoRotate
-          autoRotateSpeed={2}
+          autoRotateSpeed={1}
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
