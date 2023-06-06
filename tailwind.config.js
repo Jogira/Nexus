@@ -23,9 +23,9 @@ module.exports = {
         xs: "450px",
       },
       backgroundImage: {
-        "hero-pattern": "url('https://raw.githubusercontent.com/Jogira/Nexus/main/src/assets/herobg.png')",
+        'hero-pattern': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url("https://wallpaperaccess.com/full/755385.jpg")',
       },
-    },
+  },
   },
   plugins: [],
 };

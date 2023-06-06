@@ -22,9 +22,9 @@ const VaporwaveCanvas = () => {
 
         // Textures
         const textureLoader = new THREE.TextureLoader();
-        const gridTexture = textureLoader.load("/grid.png");
-        const heightTexture = textureLoader.load("/displacement.png");
-        const metalnessTexture = textureLoader.load("/metalness.png");
+        const gridTexture = textureLoader.load("./grid.png");
+        const heightTexture = textureLoader.load("./displacement.png");
+        const metalnessTexture = textureLoader.load("./metalness.png");
 
         // Plane
         const parameters = {
