@@ -17,7 +17,8 @@ const VaporwaveCanvas = () => {
 
         // Scene
         const scene = new THREE.Scene();
-        scene.background = null;
+        const fog = new THREE.Fog('#000000', 1, 2.5);
+        scene.fog = fog;
 
         // Textures
         const textureLoader = new THREE.TextureLoader();
