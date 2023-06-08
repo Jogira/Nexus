@@ -118,9 +118,9 @@ const experiences = [
     iconBg: "#FFFFFF",
     date: "May 2019 - Sept 2019",
     points: [
+      "Demonstrated products to educate customers on the use and functionality of various technology, including computers, printers, and accessories.",
       "Assisted customers with technical inquiries, troubleshot hardware and software issues or installation, and recommended appropriate products and solutions to meet their needs.",
       "Actively contributed to the sales team by achieving monthly sales targets through upselling and cross-selling strategies, resulting in increased revenue and customer satisfaction.",
-      "Demonstrated products to educate customers on the use and functionality of various technology, including computers, printers, and accessories.",
     ],
   },
   {
@@ -130,10 +130,10 @@ const experiences = [
     iconBg: "#FFFFFF",
     date: "May 2021 - January 2023",
     points: [
-      "Developed and maintained web application frontends using Python, Javascript, and Ajax in a fast-paced, agile startup environment.",
-      "Utilized Figma and Bootstrap5 to create responsive and visually appealing user interfaces, ensuring a seamless experience across devices.",
-      "Incorporated user feedback into design and the development process to fit our userbase needs.",
+      "Developed and maintained web application frontends using Python, JavaScript, and Ajax in a fast-paced, agile startup environment.",
       "Worked with PHPMyAdmin and the Django ORM for database management and optimization, ensuring efficient data storage and retrieval.",
+      "Utilized Figma and Bootstrap 5 to create responsive and visually appealing user interfaces, ensuring a seamless experience across devices.",
+      "Incorporated user feedback into design and the development process to fit our userbase needs.",
       "Implemented and consumed APIs to aggregate authors' revenue information from multiple vendors into a centralized platform to assist in decision making."
     ],
   },
