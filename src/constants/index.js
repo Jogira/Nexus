@@ -16,6 +16,7 @@ import {
   figma,
   staples,
   ppllc,
+  holonet,
   vgdb,
   nexus,
   floodmap,
@@ -168,6 +169,29 @@ const testimonials = [
 
 const projects = [
   {
+    name: "Holonet",
+    description:
+      ".NET + Angular ecommerce site with account creation, Stripe API integration, and form validation. Custom APIs & DTOs included."
+    ,
+    tags: [
+      {
+        name: ".NET",
+        color: "yellow-text-gradient",
+      },
+      {
+        name: "APIs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "angular",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: holonet,
+    source_code_link: "https://github.com/Jogira/holonet",
+    live_demo_link: "http://68.183.124.176/"
+  },
+  {
     name: "Zweiton VG DB",
     description:
       "Video game database created using Angular that allows users to search, filter, and view further game details from the Rawg.io API."
@@ -178,7 +202,7 @@ const projects = [
         color: "pink-text-gradient",
       },
       {
-        name: "API",
+        name: "APIs",
         color: "green-text-gradient",
       },
       {

@@ -27,6 +27,7 @@ import ppllc from "./company/ppllc.png";
 
 
 import vgdb from "./projects/vgdb.png";
+import holonet from "./projects/holonet.png";
 import nexus from "./projects/nexus.png";
 import floodmap from "./projects/floodmap.png";
 import aspvid from "./projects/aspvid.png";
@@ -56,6 +57,7 @@ export {
   staples,
   ppllc,
   pfp,
+  holonet,
   vgdb,
   nexus,
   aspvid,
