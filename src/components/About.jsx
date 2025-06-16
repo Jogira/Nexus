@@ -41,16 +41,17 @@ const About = () => {
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-secondary text-[19px] max-w-3xl leading-[30px]"
       >
-        As a budding full stack software engineer, I've honed my programming skills primarily in{' '}
-        <span className="text-[#4584b6] font-bold">Python,</span>{' '}
-        <span className="text-[#9B4993] font-bold">C#,</span> and{' '}
-        <span className="text-[#f7df1e] font-bold">JavaScript.</span> I've also used various frameworks (<span className="text-[#29A071] font-bold">Django</span>/<span className="text-[#DE002D] font-bold">Angular</span>/<span className="text-[#4D29C8] font-bold">.NET</span>) to develop responsive, modern webapps.
-        <br></br>I'm quick to learn and eager to master new technologies so I can contribute cutting-edge
-        solutions that leave an <span className="italic font-bold">impact</span> on the tech world.
-        <br></br>
-        <br></br>
-        I'm also a big fan of CRT monitors, dogs, Halloween, video games, art, and animation.
+        Over the past few years, I’ve grown from experimenting with personal projects to building production-ready applications for real-world use. I work primarily with{' '}
+        <span className="text-[#9B4993] font-bold">C#</span>,{' '}
+        <span className="text-[#4584b6] font-bold">Python</span>, and{' '}
+        <span className="text-[#f7df1e] font-bold">JavaScript</span>, using frameworks like{' '}
+        <span className="text-[#29A071] font-bold">Django</span>,{' '}
+        <span className="text-[#4D29C8] font-bold">ASP.NET</span>, and{' '}
+        <span className="text-[#DE002D] font-bold">Angular</span> to build scalable, maintainable applications.
+        <br /><br />
+        I enjoy translating real needs into clean, functional software, whether integrating APIs, debugging tricky edge cases, or collaborating directly with stakeholders. Outside of work, I stay curious through side projects in electrical engineering, studying Japanese, and exploring the world of animation.
       </motion.p>
+
 
       <div className="mt-10 flex flex-wrap gap-20 justify-center">
         {services.map((service, index) => (

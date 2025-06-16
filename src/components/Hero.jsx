@@ -36,7 +36,10 @@ const Hero = () => {
         <div className="z-40">
           <h1 className={`${styles.heroHeadText} text-white`}>Hi, I'm <span className="text-[#00ff91]">Jonathan</span>,</h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`} style={{ zIndex: 100 }}>
-            a software engineer & doglover, determined to expand my skill set and tackle new challenges. Let's create innovative solutions together!
+            <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+              a full-stack developer with a focus on C# and ASP.NET, building scalable web applications that solve real-world problems. Whether integrating complex APIs or designing intuitive UIs, I care about writing clean, maintainable code. When I'm not coding, you'll usually find me spending time with my dog or learning something new.
+            </p>
+
           </p>
         </div>
 

@@ -2,7 +2,10 @@ import logo from "../../kinoko.png";
 import pfp from "../../Chryseis.png";
 import frontend from "./frontend.png";
 import languages from "./languages.png";
+
 import backend from "./backend.png";
+import gis from "./gis.png";
+import testing from "./testing.png";
 import github from "./github.png";
 import viewIcon from "./viewIcon.png";
 import menu from "./menu.svg";
@@ -24,6 +27,9 @@ import sql from "./tech/sql.png";
 
 import staples from "./company/staples.png";
 import ppllc from "./company/ppllc.png";
+import caci from "./company/caci.png";
+import timmons from "./company/timmons.png";
+
 
 
 import vgdb from "./projects/vgdb.png";
@@ -38,6 +44,8 @@ export {
   frontend,
   languages,
   backend,
+  gis,
+  testing,
   viewIcon,
   github,
   menu,
@@ -56,6 +64,8 @@ export {
   typescript,
   staples,
   ppllc,
+  caci,
+  timmons,
   pfp,
   holonet,
   vgdb,

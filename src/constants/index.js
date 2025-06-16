@@ -1,6 +1,8 @@
 import {
   frontend,
   languages,
+  testing,
+  gis,
   backend,
   javascript,
   typescript,
@@ -16,6 +18,8 @@ import {
   figma,
   staples,
   ppllc,
+  caci,
+  timmons,
   holonet,
   vgdb,
   nexus,
@@ -57,6 +61,14 @@ const services = [
   {
     title: "Backend Developer",
     icon: backend,
+  },
+  {
+    title: "Automated Testing",
+    icon: testing,
+  },
+  {
+    title: "GIS Developer",
+    icon: gis,
   }
 ];
 
@@ -113,15 +125,35 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Tech & Sales Associate",
-    company_name: "Staples",
-    icon: staples,
+    title: "Full Stack Software Developer",
+    company_name: "Timmons Group",
+    icon: timmons,
     iconBg: "#FFFFFF",
-    date: "May 2019 - Sept 2019",
+    date: "January 2023 - Present",
     points: [
-      "Demonstrated products to educate customers on the use and functionality of various technology, including computers, printers, and accessories.",
-      "Assisted customers with technical inquiries, troubleshot hardware and software issues or installation, and recommended appropriate products and solutions to meet their needs.",
-      "Actively contributed to the sales team by achieving monthly sales targets through upselling and cross-selling strategies, resulting in increased revenue and customer satisfaction.",
+      "Collaborate directly with clients to gather requirements and plan new features that align with their goals.",
+      "Manage source control with GitKraken and coordinate project workflows using Microsoft Teams and Teamwork.",
+      "Develop full-stack web applications using C# (.NET 8) and JavaScript, delivering seamless frontend-to-backend solutions.",
+      "Deploy and configure client websites on IIS, including web.config management and integration with Cityworks API for permit processing.",
+      "Integrate ESRI ArcGIS API for interactive mapping, enabling location selection and validation within permit applications.",
+      "Build and maintain secure APIs interfacing with MSSQL Server 18 databases, ensuring efficient data access and manipulation.",
+      "Conduct thorough testing of new features on development branches before production deployment, maintaining system reliability.",
+      "Integrate payment gateways (Authorize.NET, Stripe) to expand portal capabilities.",
+      "Diagnose and resolve issues spanning frontend JavaScript, backend C#, and database layers to ensure smooth operation."
+    ],
+  },
+  {
+    title: "Junior .NET Developer",
+    company_name: "CACI International",
+    icon: caci,
+    iconBg: "#FFFFFF",
+    date: "January 2023 - August 2023",
+    points: [
+      "Contributed to DoD Comptroller financial systems by developing and maintaining full-stack C#/.NET applications.",
+      "Collaborated within Agile teams utilizing Azure DevOps and Atlassian tools for sprint planning, version control, and CI/CD.",
+      "Designed and maintained automated testing workflows with Postman, UI Path Bots, and GitLab Copilot to reduce manual QA effort and identify regressions early.",
+      "Implemented RESTful and GraphQL APIs for seamless frontend-backend communication.",
+      "Produced clear documentation and maintainable code to facilitate long-term system stability and easier onboarding."
     ],
   },
   {
@@ -131,11 +163,11 @@ const experiences = [
     iconBg: "#FFFFFF",
     date: "May 2021 - January 2023",
     points: [
-      "Developed and maintained web application frontends using Python, JavaScript, and Ajax in a fast-paced, agile startup environment.",
-      "Worked with PHPMyAdmin and the Django ORM for database management and optimization, ensuring efficient data storage and retrieval.",
-      "Utilized Figma and Bootstrap 5 to create responsive and visually appealing user interfaces, ensuring a seamless experience across devices.",
-      "Incorporated user feedback into design and the development process to fit our userbase needs.",
-      "Implemented and consumed APIs to aggregate authors' revenue information from multiple vendors into a centralized platform to assist in decision making."
+      "Developed and maintained web application frontends using Python, JavaScript, and AJAX within an agile startup environment.",
+      "Managed database schema and optimized queries using Django ORM and PHPMyAdmin.",
+      "Designed responsive user interfaces with Figma and Bootstrap 5 to ensure seamless multi-device user experiences.",
+      "Incorporated user feedback into design iterations to better meet user needs.",
+      "Implemented and integrated APIs aggregating revenue data from multiple vendors into a centralized platform to aid decision-making."
     ],
   },
 ];
@@ -189,7 +221,7 @@ const projects = [
     ],
     image: holonet,
     source_code_link: "https://github.com/Jogira/holonet",
-    live_demo_link: "http://68.183.124.176/"
+    // live_demo_link: "http://68.183.124.176/"
   },
   {
     name: "Zweiton VG DB",
