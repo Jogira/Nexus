@@ -1,13 +1,10 @@
-
 import { BrowserRouter } from 'react-router-dom';
 
 import { About, Contact, Experience, Hero, Navbar, Tech, Works, Vaporwave } from './components';
 
-
-
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Nexus">
       <div className="relative z-0 gradient">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
