@@ -33,6 +33,7 @@ import timmons from "./company/timmons.png";
 
 
 import vgdb from "./projects/vgdb.png";
+import crtmask from "./projects/crtmask.gif";
 import holonet from "./projects/holonet.png";
 import nexus from "./projects/nexus.png";
 import floodmap from "./projects/floodmap.png";
@@ -69,6 +70,7 @@ export {
   pfp,
   holonet,
   vgdb,
+  crtmask,
   nexus,
   aspvid,
   floodmap,

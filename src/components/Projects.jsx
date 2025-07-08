@@ -91,7 +91,7 @@ const Projects = () => {
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[19px] max-w-3xl leading-[30px]">
-          These projects showcase my expertise with modern, industry-standard technologies across diverse domains.
+          These projects showcase my expertise with modern, industry-standard technologies across diverse tech stacks.
           Each card provides a brief overview, along with links to the GitHub repositories and live demos when available.
 
           <br>

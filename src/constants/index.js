@@ -22,6 +22,7 @@ import {
   timmons,
   holonet,
   vgdb,
+  crtmask,
   nexus,
   floodmap,
   aspvid,
@@ -313,6 +314,20 @@ const projects = [
     image: nexus,
     source_code_link: "https://github.com/Jogira/Nexus",
   },
+  {
+    name: "CRT Mask",
+    description:
+      "A mask made from an RBG matrix with a soldered on accelerometer and mic to simulate head tilting and speaking. "
+    ,
+    tags: [
+      {
+        name: "python",
+        color: "blue-text-gradient",
+      }
+    ],
+    image: crtmask,
+    source_code_link: "https://github.com/Jogira/adafruit-green-blue-fix",
+  }
 ];
 
 export { services, technologies, experiences, testimonials, projects };
