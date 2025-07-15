@@ -152,7 +152,7 @@ const experiences = [
     points: [
       "Contributed to DoD Comptroller financial systems by developing and maintaining full-stack C#/.NET applications.",
       "Collaborated within Agile teams utilizing Azure DevOps and Atlassian tools for sprint planning, version control, and CI/CD.",
-      "Designed and maintained automated testing workflows with Postman, UI Path Bots, and GitLab Copilot to reduce manual QA effort and identify regressions early.",
+      "Designed and maintained automated testing workflows with Postman and GitHub Copilot to reduce manual QA effort and identify regressions early.",
       "Implemented RESTful and GraphQL APIs for seamless frontend-backend communication.",
       "Produced clear documentation and maintainable code to facilitate long-term system stability and easier onboarding."
     ],
