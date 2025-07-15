@@ -148,7 +148,7 @@ const experiences = [
     company_name: "CACI International",
     icon: caci,
     iconBg: "#FFFFFF",
-    date: "January 2023 - August 2023",
+    date: "December 2022 - August 2023",
     points: [
       "Contributed to DoD Comptroller financial systems by developing and maintaining full-stack C#/.NET applications.",
       "Collaborated within Agile teams utilizing Azure DevOps and Atlassian tools for sprint planning, version control, and CI/CD.",
@@ -162,7 +162,7 @@ const experiences = [
     company_name: "Publishing Profits LLC",
     icon: ppllc,
     iconBg: "#FFFFFF",
-    date: "January 2021 - January 2023",
+    date: "January 2021 - December 2022",
     points: [
       "Developed and maintained web application frontends using Python, JavaScript, and AJAX within an agile startup environment.",
       "Managed database schema and optimized queries using Django ORM and PHPMyAdmin.",
