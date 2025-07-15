@@ -130,7 +130,7 @@ const experiences = [
     company_name: "Timmons Group",
     icon: timmons,
     iconBg: "#FFFFFF",
-    date: "January 2023 - Present",
+    date: "August 2023 - Present",
     points: [
       "Collaborate directly with clients to gather requirements and plan new features that align with their goals.",
       "Manage source control with GitKraken and coordinate project workflows using Microsoft Teams and Teamwork.",
@@ -162,7 +162,7 @@ const experiences = [
     company_name: "Publishing Profits LLC",
     icon: ppllc,
     iconBg: "#FFFFFF",
-    date: "May 2021 - January 2023",
+    date: "January 2021 - January 2023",
     points: [
       "Developed and maintained web application frontends using Python, JavaScript, and AJAX within an agile startup environment.",
       "Managed database schema and optimized queries using Django ORM and PHPMyAdmin.",
