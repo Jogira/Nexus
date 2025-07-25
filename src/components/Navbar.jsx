@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa"; // Import the 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { menu, close, pfp } from "../assets";
+import Resume from '/src/assets/resume.pdf';
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -90,7 +91,7 @@ const Navbar = () => {
 
           {/* Additional PDF button */}
           <li className='text-secondary hover:text-[#34ffb9] text-[25px] font-medium cursor-pointer'>
-            <a href='https://github.com/Jogira/Nexus/blob/main/resume.pdf' title='Resume' target='_blank' rel='noopener noreferrer'>
+            <a href={Resume} title='Resume' target='_blank' rel='noopener noreferrer'>
               <FaFilePdf />
             </a>
           </li>
@@ -135,7 +136,7 @@ const Navbar = () => {
 
               {/* Additional PDF button */}
               <li className='text-secondary hover:text-white text-[16px] font-medium cursor-pointer'>
-                <a href='https://github.com/Jogira/Nexus/blob/main/resume.pdf' title='Resume' target='_blank' rel='noopener noreferrer'>
+                <a href={Resume} title='Resume' target='_blank' rel='noopener noreferrer'>
                   Resume
                 </a>
               </li>
